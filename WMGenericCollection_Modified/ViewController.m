@@ -37,7 +37,12 @@ WMGENERICDICTIONARY_SYNTHESIZE(NSURL *, NSString *, NSURLArray *, NSStringArray 
     
     NSStringArray *strings = (NSStringArray *)@[@"https://", @"http://"];
     
-    NSLog(@"%@", strings);
+    NSLog(@"%@", strings[1]);
+    
+    NSMutableStringArray *stringsMutableArray = [NSMutableStringArray new];
+    stringsMutableArray[0] = @2;
+    
+    NSLog(@"%@", stringsMutableArray);
     
     NSURLArray *URLs = [self URLArrayFromStrings:strings];
     
