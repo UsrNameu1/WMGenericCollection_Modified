@@ -7,6 +7,21 @@
 //
 
 #import "ViewController.h"
+#import "WMGenericArray.h"
+#import "WMGenericSet.h"
+#import "WMGenericDictionary.h"
+
+WMGENERICARRAY_INTERFACE(NSString *, NSStringArray, NSMutableStringArray)
+WMGENERICARRAY_SYNTHESIZE(NSString *, NSStringArray, NSMutableStringArray);
+
+WMGENERICARRAY_INTERFACE(NSURL *, NSURLArray, NSMutableURLArray)
+WMGENERICARRAY_SYNTHESIZE(NSURL *, NSURLArray, NSMutableURLArray);
+
+WMGENERICSET_INTERFACE(NSString *, NSStringArray *, NSStringSet, NSMutableStringSet, NSCountedStringSet);
+WMGENERICSET_SYNTHESIZE(NSString *, NSStringArray *, NSStringSet, NSMutableStringSet, NSCountedStringSet);
+
+WMGENERICDICTIONARY_INTERFACE(NSURL *, NSString *, NSURLArray *, NSStringArray *, NSStringSet *, NSURLStringDictionary, NSMutableURLStringDictionary);
+WMGENERICDICTIONARY_SYNTHESIZE(NSURL *, NSString *, NSURLArray *, NSStringArray *, NSStringSet *, NSURLStringDictionary, NSMutableURLStringDictionary);
 
 @interface ViewController ()
 
@@ -14,16 +29,38 @@
 
 @implementation ViewController
 
+#pragma mark - Lifecycle methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSStringArray *strings = (NSStringArray *)@[@"https://", @"http://"];
+    
+    NSLog(@"%@", strings);
+    
+    NSURLArray *URLs = [self URLArrayFromStrings:strings];
+    
+    NSLog(@"%@", URLs[1].absoluteURL);
+    
+    NSStringSet *stringSet = [NSStringSet setWithArray:strings];
+    
+    NSLog(@"%lu", (unsigned long)stringSet.anyObject.length);
+    
+    NSURLStringDictionary *URLDictionary = [NSURLStringDictionary dictionaryWithObjects:URLs forKeys:strings];
+    
+    NSLog(@"urlString : %@ , keylength : %lu", [URLDictionary objectForKey:strings.firstObject].absoluteURL, (unsigned long)strings.firstObject.length);
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Private methods
+
+- (NSURLArray *)URLArrayFromStrings:(NSStringArray *)strings
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	NSMutableURLArray *URLs = [NSMutableURLArray array];
+	for (NSString *string in strings) {
+		[URLs addObject:[NSURL URLWithString:string]];
+	}
+	return [NSURLArray arrayWithArray:(NSURLArray*)URLs];
 }
 
 @end

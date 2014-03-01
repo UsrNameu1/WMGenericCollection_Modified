@@ -55,6 +55,9 @@
 		1460BF9618C1F1E400A71803 /* WMGenericCollection_ModifiedTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WMGenericCollection_ModifiedTests-Info.plist"; sourceTree = "<group>"; };
 		1460BF9818C1F1E400A71803 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1460BF9A18C1F1E400A71803 /* WMGenericCollection_ModifiedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMGenericCollection_ModifiedTests.m; sourceTree = "<group>"; };
+		1460BFA418C1F20600A71803 /* WMGenericArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGenericArray.h; sourceTree = "<group>"; };
+		1460BFA518C1F20600A71803 /* WMGenericDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGenericDictionary.h; sourceTree = "<group>"; };
+		1460BFA618C1F20600A71803 /* WMGenericSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGenericSet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,9 @@
 		1460BF7218C1F1E400A71803 /* WMGenericCollection_Modified */ = {
 			isa = PBXGroup;
 			children = (
+				1460BFA418C1F20600A71803 /* WMGenericArray.h */,
+				1460BFA518C1F20600A71803 /* WMGenericDictionary.h */,
+				1460BFA618C1F20600A71803 /* WMGenericSet.h */,
 				1460BF7B18C1F1E400A71803 /* AppDelegate.h */,
 				1460BF7C18C1F1E400A71803 /* AppDelegate.m */,
 				1460BF7E18C1F1E400A71803 /* Main_iPhone.storyboard */,
