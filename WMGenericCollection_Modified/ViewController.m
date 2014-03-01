@@ -40,7 +40,7 @@ WMGENERICDICTIONARY_SYNTHESIZE(NSURL *, NSString *, NSURLArray *, NSStringArray 
     NSLog(@"%@", strings[1]);
     
     NSMutableStringArray *stringsMutableArray = [NSMutableStringArray new];
-    stringsMutableArray[0] = @2;
+    stringsMutableArray[0] = strings[1];
     
     NSLog(@"%@", stringsMutableArray);
     

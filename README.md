@@ -1,5 +1,5 @@
 WMGenericCollection_Modified
 ============================
 
-WMGenericCollectionの修正ファイルと使用例です。
+Modified header sources of [WMGenericCollection](https://github.com/w-m/WMGenericCollection) for ARC Environment
 
